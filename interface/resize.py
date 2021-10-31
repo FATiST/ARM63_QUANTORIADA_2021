@@ -84,3 +84,11 @@ def fix(dx, dy, height):
     return realX, realY
 
 
+
+
+#C:\Users\Robo-teacher\Downloads\dwa\finalNTI2\image\test
+#C:/Users/Robo-teacher/Downloads/dwa/finalNTI2/1625658582633.jpg
+#image = formattingImage("C:/Users/Robo-teacher/Downloads/dwa/finalNTI2/1625662318933.jpg")
+#cv2.imshow('vo', image)
+#cv2.waitKey()
+#cv2.destroyAllWindows()

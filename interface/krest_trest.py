@@ -4,10 +4,14 @@ import math
 import time
 import telnetlib
 import random
+# Robot Link Length Parameter
 link = [20, 19]
+# Robot Initial Joint Values (degree)
 angle = [0, 0, 0, 0]
+# Target End of Effector Position
 target = [0, 0, 0]
 
+# Create figure to plot
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1)
 
@@ -92,6 +96,7 @@ def IK(target, angle, link, max_iter=10000, err_min=0.1):
                 if sin_rot_ang < 0.0:
                     rot_ang = -rot_ang
 
+                # Update current joint angle values
                 angle[i] = angle[i] + (rot_ang * 180 / math.pi)
 
                 if angle[i] >= 360:
@@ -105,16 +110,18 @@ def IK(target, angle, link, max_iter=10000, err_min=0.1):
     return angle, err_end_to_target, solved, loop
 
 
+# Have not implemented
 def onclick(event):
     global target, link, angle, ax
     target[0] = event.xdata
-    target[1] = event.ydata+16.5
+    target[1] = event.ydata
 
     print("Target Position : ", target)
     plt.cla()
     ax.set_xlim(-50, 150)
     ax.set_ylim(-50, 150)
 
+    # Inverse Kinematics
     angle, err, solved, iteration = IK(target, angle, link, max_iter=1000)
 
     P = FK(angle, link)
@@ -122,21 +129,22 @@ def onclick(event):
         start_point = P[i]
         end_point = P[i + 1]
         ax.plot([start_point[0, 3], end_point[0, 3]], [start_point[1, 3], end_point[1, 3]], linewidth=5)
+        # draw_axis(ax, scale=5, A=P[i+1], draw_2d=True)
 
     if solved:
         print("\nIK solved\n")
         print("Iteration :", iteration)
         print("Angle :", angle)
-        telnet = telnetlib.Telnet('192.168.43.54')
+        telnet = telnetlib.Telnet('192.168.1.159')
 
         if round(angle[0]) < 160 and round(angle[1]) < 160:
             d_angle = (90-(360 - round(angle[0]) - round(angle[1]) - 90))
             if d_angle < 0:
                 d_angle = 0
             s = f'A{0} B{round(angle[0])} C{180 - round(angle[1])} D{d_angle} \n'
-            s_new = f'A{0} B{round(angle[0]) + random.randint(1, 3)} C{180 - round(angle[1]) + random.randint(1, 3)} D{d_angle + random.randint(1, 3)} \n'
+            s_new = f'A{0} B{round(angle[0]) + random.randint(1, 3)} C{180-round(angle[1]) + random.randint(1, 3)} D90\n'
 
-            print(s)
+            print(s_new)
 
             telnet.write(s.encode())
             time.sleep(0.05)
@@ -166,6 +174,7 @@ def go_to(targets,an,rotate):
     ax.set_xlim(-50, 150)
     ax.set_ylim(-50, 150)
 
+    # Inverse Kinematics
     angle, err, solved, iteration = IK(target, angle, link, max_iter=1000)
 
     P = FK(angle, link)
@@ -173,34 +182,34 @@ def go_to(targets,an,rotate):
         start_point = P[i]
         end_point = P[i + 1]
         ax.plot([start_point[0, 3], end_point[0, 3]], [start_point[1, 3], end_point[1, 3]], linewidth=5)
+        # draw_axis(ax, scale=5, A=P[i+1], draw_2d=True)
 
     if solved:
-        print("\nIK solved\n")
-        print("Iteration :", iteration)
-        print("Angle :", angle)
-        telnet = telnetlib.Telnet('192.168.43.54')
+        #print("\nIK solved\n")
+        #print("Iteration :", iteration)
+        #print("Angle :", angle)
+        telnet = telnetlib.Telnet('192.168.1.159')
         if round(angle[0]) < 300 and round(angle[1]) < 300:
-            s = f'A{an} B{round(angle[0])} C{180 - round(angle[1])} \n'
-            s_new = f'A{an} B{round(angle[0]) + random.randint(1, 3)} C{180 - round(angle[1]) + random.randint(1, 3)} \n'
+            s = f'S150 A{an} B{round(angle[0])} C{round(angle[1])}  D90\n'
+            s_new = f'S150 A{180-an} B{round(angle[0]) + random.randint(1, 3)} C{180-round(angle[1]) + random.randint(1, 3)} Z150\n'
 
-            print(s)
+            #print(s)
 
-            telnet.write(s.encode())
-            time.sleep(0.05)
             telnet.write(s_new.encode())
             time.sleep(0.05)
+            return s
 
         else:
             print('IK ERROR')
-        print("Target :", target)
-        print("End Effector :", P[-1][:3, 3])
-        print("Error :", err)
+        #print("Target :", target)
+        #print("End Effector :", P[-1][:3, 3])
+        #print("Error :", err)
     else:
         print("\nIK error\n")
-        print("Angle :", angle)
-        print("Target :", target)
-        print("End Effector :", P[-1][:3, 3])
-        print("Error :", err)
+        #print("Angle :", angle)
+        #print("Target :", target)
+        #print("End Effector :", P[-1][:3, 3])
+        #print("Error :", err)
     fig.canvas.draw()
 
 
@@ -210,19 +219,16 @@ def main():
     ax.set_xlim(-50, 150)
     ax.set_ylim(-50, 150)
 
+    # Forward Kinematics
     P = FK(angle, link)
+    # Plot Link
     for i in range(len(link)):
         start_point = P[i]
         end_point = P[i + 1]
         ax.plot([start_point[0, 3], end_point[0, 3]], [start_point[1, 3], end_point[1, 3]], linewidth=5)
+        # draw_axis(ax, scale=5, A=P[i+1], draw_2d=True)
     plt.show()
 
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-

@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1500</width>
+    <height>1100</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1500</width>
+    <height>1100</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1500</width>
+    <height>1100</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #000000;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">
+#listWidget {
+font-size: 12pt;
+	background-color: rgb(40, 38, 42);
+	color: #fff;
+background-color: #2F2F54;
+border: 0px solid rgb(40, 38, 42);
+border-radius: 15px;
+
+}
+
+#listWidget::Item{
+	font-size: 18pt;
+	font: 87 14pt &quot;Panton ExtraBlack&quot;;
+	border-radius: 15px;
+	background-color: #6A6A9F;
+	margin-bottom: 5px;
+}
+
+#listWidget::Item:hover{
+	background:#53537B;
+}
+
+#bg_list {
+	background-color: #191932;
+border-radius: 25px;
+}
+#bg_list_2 {
+	background-color: #191932;
+border-radius: 25px;
+}
+#bg_list_3 {
+	background-color: #191932;
+border-radius: 25px;
+}
+#listWidget::item:selected{
+	background:#53537B;
+	color: #FFFFFF;
+	}
+#horizontalSlider {
+	background-color:#191932;
+}
+#textEdit {
+font: 57 14pt &quot;Roboto Medium&quot;;
+	color: #fff;
+	border-radius: 25px;
+	background-color:#6A6A9F;
+}
+
+#pushButton {
+	background: #6A6A9F;
+	border-radius: 10px;
+	color: #fff;	
+	font: 87 15pt &quot;Roboto Black&quot;;
+}
+
+#pushButton_2 {
+	background: #6A6A9F;
+	border-radius: 10px;
+	color: #fff;	
+	font: 87 15pt &quot;Roboto Black&quot;;
+}
+
+#pushButton_3 {
+	background: #6A6A9F;
+	border-radius: 10px;
+	color: #fff;	
+	font: 87 15pt &quot;Roboto Black&quot;;
+}
+
+#pushButton_5 {
+	background: #6A6A9F;
+	border-radius: 10px;
+	color: #fff;	
+	font: 87 15pt &quot;Roboto Black&quot;;
+}
+#pushButton_4 {
+	background: #6A6A9F;
+	border-radius: 10px;
+	color: #fff;	
+	font: 87 15pt &quot;Roboto Black&quot;;
+}
+
+#pushButton_6 {
+	background: #6A6A9F;
+	border-radius: 10px;
+	color: #fff;	
+	font: 87 15pt &quot;Roboto Black&quot;;
+}
+
+#pushButton_7 {
+	background: #6A6A9F;
+	border-radius: 10px;
+	color: #fff;	
+	font: 87 15pt &quot;Roboto Black&quot;;
+}
+
+#pushButton_8 {
+	background: #6A6A9F;
+	border-radius: 10px;
+	color: #fff;	
+	font: 87 15pt &quot;Roboto Black&quot;;
+}
+
+#pushButton_9 {
+	background: #6A6A9F;
+	border-radius: 10px;
+	color: #fff;	
+	font: 87 15pt &quot;Roboto Black&quot;;
+}
+
+#pushButton_10 {
+	background: #6A6A9F;
+	border-radius: 10px;
+	color: #fff;	
+	font: 87 15pt &quot;Roboto Black&quot;;
+}
+#pushButton_11 {
+	background: #6A6A9F;
+	border-radius: 10px;
+	color: #fff;	
+	font: 87 15pt &quot;Roboto Black&quot;;
+}
+#pushButton:hover{
+	transition: all 1s;
+	gridline-color: rgb(48, 48, 48);
+	background-color: #2F2F54;
+}
+
+#pushButton_2:hover{
+	transition: all 1s;
+	gridline-color: rgb(48, 48, 48);
+	background-color: #2F2F54;
+}
+
+#pushButton_3:hover{
+	transition: all 1s;
+	gridline-color: rgb(48, 48, 48);
+	background-color: #2F2F54;
+}
+
+#pushButton_4:hover{
+	transition: all 1s;
+	gridline-color: rgb(48, 48, 48);
+	background-color: #2F2F54;
+}
+
+#pushButton_5:hover{
+	transition: all 1s;
+	gridline-color: rgb(48, 48, 48);
+	background-color: #2F2F54;
+}
+
+#pushButton_6:hover{
+	transition: all 1s;
+	gridline-color: rgb(48, 48, 48);
+	background-color: #2F2F54;
+}
+
+#pushButton_7:hover{
+	transition: all 1s;
+	gridline-color: rgb(48, 48, 48);
+	background-color: #2F2F54;
+}
+#pushButton_8:hover{
+	transition: all 1s;
+	gridline-color: rgb(48, 48, 48);
+	background-color: #2F2F54;
+}
+#pushButton_9:hover{
+	transition: all 1s;
+	gridline-color: rgb(48, 48, 48);
+	background-color: #2F2F54;
+}
+#pushButton_10:hover{
+	transition: all 1s;
+	gridline-color: rgb(48, 48, 48);
+	background-color: #2F2F54;
+}
+#pushButton_11:hover{
+	transition: all 1s;
+	gridline-color: rgb(48, 48, 48);
+	background-color: #2F2F54;
+}
+#label_6{
+	font: 87 16pt &quot;Roboto Black&quot;;
+color: #fff;
+background-color: #191932;
+}
+
+#label_7 {
+	font: 87 16pt &quot;Roboto Black&quot;;
+color: #fff;
+background-color: #191932;
+}
+
+#label_8 {
+	font: 87 16pt &quot;Roboto Black&quot;;
+color: #fff;
+background-color: #191932;
+}
+#label_9 {
+	font: 87 10pt &quot;Roboto Black&quot;;
+color: #fff;
+}
+
+
+#label_3 {
+	font: 87 16pt &quot;Roboto Black&quot;;
+color: #fff;
+background-color: #191932;
+}
+
+#label_5 {
+	font: 87 16pt &quot;Roboto Black&quot;;
+color: #fff;
+background-color: #191932;
+}
+
+#label_4 {
+	font: 87 16pt &quot;Roboto Black&quot;;
+color: #fff;
+background-color: #191932;
+}
+#label_2 {
+	font: 87 16pt &quot;Roboto Black&quot;;
+color: #fff;
+background-color: #191932;}
+#lineEdit{
+	background-color: #6A6A9F;
+	color:fff;
+border: 0px solid rgb(40, 38, 42);
+border-radius: 10px;
+}
+#lineEdit_2 {
+	background-color: #6A6A9F;
+	color:fff;
+border: 0px solid rgb(40, 38, 42);
+border-radius: 10px;
+}
+#lineEdit_3 {
+	background-color: #6A6A9F;
+	color:fff;
+border: 0px solid rgb(40, 38, 42);
+border-radius: 10px;
+}
+#lineEdit_4 {
+	background-color: #6A6A9F;
+	color:fff;
+border: 0px solid rgb(40, 38, 42);
+border-radius: 10px;
+}
+#lineEdit_5 {
+	background-color: #6A6A9F;
+	color:fff;
+border: 0px solid rgb(40, 38, 42);
+border-radius: 10px;
+}
+
+#lineEdit_6 {
+	background-color: #6A6A9F;
+	color:fff;
+border: 0px solid rgb(40, 38, 42);
+border-radius: 10px;
+}
+#lineEdit_7 {
+	background-color: #6A6A9F;
+	color:fff;
+border: 0px solid rgb(40, 38, 42);
+border-radius: 10px;
+}
+#lineEdit_8{
+	background-color: #6A6A9F;
+	color:fff;
+border: 0px solid rgb(40, 38, 42);
+border-radius: 10px;
+}</string>
+   </property>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>702</x>
+      <y>500</y>
+      <width>200</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>Запуск</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>704</x>
+      <y>551</y>
+      <width>200</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>Начать запись</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>704</x>
+      <y>601</y>
+      <width>200</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>Остановить запись</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>702</x>
+      <y>39</y>
+      <width>258</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+    </property>
+    <property name="horizontalScrollMode">
+     <enum>QAbstractItemView::ScrollPerItem</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>900</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>360</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>810</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>Болт</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>810</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>Захват</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>810</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>Маркер</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>989</x>
+      <y>39</y>
+      <width>481</width>
+      <height>451</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>760</y>
+      <width>171</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Инструмент:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_8">
+    <property name="geometry">
+     <rect>
+      <x>706</x>
+      <y>652</y>
+      <width>200</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>Создать</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_9">
+    <property name="geometry">
+     <rect>
+      <x>1230</x>
+      <y>625</y>
+      <width>145</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>Отправить</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_3">
+    <property name="geometry">
+     <rect>
+      <x>1191</x>
+      <y>540</y>
+      <width>184</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_4">
+    <property name="geometry">
+     <rect>
+      <x>1191</x>
+      <y>500</y>
+      <width>184</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_5">
+    <property name="geometry">
+     <rect>
+      <x>1191</x>
+      <y>580</y>
+      <width>184</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_10">
+    <property name="geometry">
+     <rect>
+      <x>933</x>
+      <y>500</y>
+      <width>200</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>Редакировать</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bg_list">
+    <property name="geometry">
+     <rect>
+      <x>677</x>
+      <y>22</y>
+      <width>807</width>
+      <height>700</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>1165</x>
+      <y>505</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>X:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>1165</x>
+      <y>543</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Y:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>1165</x>
+      <y>584</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Z:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bg_list_2">
+    <property name="geometry">
+     <rect>
+      <x>46</x>
+      <y>736</y>
+      <width>765</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>755</y>
+      <width>184</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>800</y>
+      <width>184</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>760</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>X:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>805</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Z:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>840</y>
+      <width>145</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string>Отправить</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bg_list_3">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>736</y>
+      <width>631</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>bg_list_2</zorder>
+   <zorder>bg_list</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>listWidget</zorder>
+   <zorder>horizontalSlider</zorder>
+   <zorder>pushButton_5</zorder>
+   <zorder>pushButton_6</zorder>
+   <zorder>pushButton_7</zorder>
+   <zorder>textEdit</zorder>
+   <zorder>label_2</zorder>
+   <zorder>pushButton_8</zorder>
+   <zorder>pushButton_9</zorder>
+   <zorder>lineEdit_3</zorder>
+   <zorder>lineEdit_4</zorder>
+   <zorder>lineEdit_5</zorder>
+   <zorder>pushButton_10</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>lineEdit</zorder>
+   <zorder>lineEdit_2</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label_8</zorder>
+   <zorder>pushButton_4</zorder>
+   <zorder>bg_list_3</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
